@@ -34,20 +34,34 @@ function App() {
   }
 
   return (
-    <>
-      <h1>React Stopwatch</h1>
-      <h2>
+    <div className="m-8 flex flex-col items-center gap-8">
+      <h1 className="text-5xl font-bold">
         { hours.toString().padStart(2, '0') }:
         { minutes.toString().padStart(2, '0') }:
         { seconds.toString().padStart(2, '0') }.
         { (milliseconds / 10).toString().padStart(2, '0') }
-      </h2>
-      <div>
-        <button onClick={handleStart}>Start</button>
-        <button onClick={handlePause}>Pause</button>
-        <button onClick={handleReset}>Reset</button>
+      </h1>
+      <div className="flex gap-3">
+        <button
+          className="border rounded px-2 py-1 hover:bg-gray-200 active:bg-gray-400"
+          onClick={handleStart}
+        >
+          Start
+        </button>
+        <button
+          className="border rounded px-2 py-1 hover:bg-gray-200 active:bg-gray-400"
+          onClick={handlePause}
+        >
+          Pause
+        </button>
+        <button
+          className="border rounded px-2 py-1 hover:bg-gray-200 active:bg-gray-400"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
       </div>
-    </>
+    </div>
   );
 }
 
